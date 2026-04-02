@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Gestion Étudiants</title>
+<link rel="stylesheet" href="serge.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="login" class="center">
+  <div class="card login-card">
+
+    <h2>Connexion</h2>
+
+    <input id="user" type="text" placeholder="Utilisateur">
+    <input id="pass" type="password" placeholder="Mot de passe">
+
+    <button class="submit-btn" onclick="login()">Se connecter</button>
+
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" class="hidden">
+
+  <nav>
+    <button onclick="show('dashboard')">
+    <i class="fas fa-home"></i>
+</button>
+
+<button onclick="show('form')">
+    <i class="fas fa-user-plus"></i>
+</button>
+
+<button onclick="show('list')">
+    <i class="fas fa-users"></i>
+</button>
+
+<button onclick="logout()">
+    <i class="fas fa-sign-out-alt"></i>
+</button>
+  </nav>
+
+  <div class="content">
+
+    <!-- DASHBOARD -->
+    <div class="dashboard" id="dashboard">
+      <h1>Tableau de bord</h1>
+      <div class="card">
+        <h3>Total étudiants</h3>
+        <p id="total"></p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div id="form" class="hidden">
+        <div class="card">
+             <h2>Inscription</h2>
+
+      <input id="nom" placeholder="Votre Nom">
+      <input id="prenom" placeholder="Votre Prénom">
+     <input list="Sexe" id="sexe" placeholder="Votre Sexe">
+     <datalist id="Sexe">
+        <option value="Masculin">
+        <option value="Féminin">
+     </datalist> 
+     <input type="date" id="dateNaissance" placeholder="Date de naissance">
+
+    <input list="promotions" id="Promotion" placeholder=" Votre Promotion">
+    <datalist id="promotions">
+        <option value="L1 ">
+        <option value="L2 ">
+        <option value="L3 ">
+        <option value="M1 ">
+        <option value="M2 ">
+    </datalist>
+
+    <input list="Departement" id="departement" placeholder="Votre Departement">
+    <datalist id="Departement">
+        <option value="Informatique ">
+        <option value="Droit ">
+        <option value="Économie">
+        <option value="Médecine">
+        <option value="Santé">
+    </datalist>
+
+      <div class="actions">
+        <button class="save" onclick="add()">Enregistrer</button>
+      </div>
+    </div>
+        </div>
+     
+
+    <!-- LIST -->
+    <div id="list" class="hidden">
+        <div class="card">
+             <h2>Liste des étudiants</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Sexe</th>
+            <th>Date de naissance</th>
+            <th>Promotion</th>
+            <th>Departement</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="table"></tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+        </div>
+     
+
+<script src="serge.js"></script>
+</body>
+</html>
